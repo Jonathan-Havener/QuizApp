@@ -1,0 +1,19 @@
+
+<h4 *ngFor="let quizElement of this.quizData.quizes[this.sessionService.quizId].questions; let i = index">
+    {{quizElement.question}}
+    <h5 *ngFor="let option of quizElement.choices; let j = index;">
+        <div class="form-check">
+            <input class="form-check-input" type="radio" name="{{quizElement.question}}" 
+                id="{{j}}" value = "{{j}}"  [(ngModel)]="quizElement.answerSelected">
+            <label class="form-check-label" for="option">
+                {{option}}
+            </label>
+        </div>
+    </h5>
+</h4>
+
+<button (click) = submitQuiz()>Submit!</button>
+
+<footer>
+    <button (click) = this.sessionService.logout()>Logout</button>
+</footer>

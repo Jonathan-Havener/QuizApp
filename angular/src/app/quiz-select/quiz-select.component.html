@@ -1,0 +1,25 @@
+
+
+<body >
+<form>
+<div class="container">
+<h3>Select Area</h3>
+
+<h6>{{this.errorMessage}}</h6>
+
+<select [(ngModel)]="this.selectedLevel1" name="kay" >
+    <option *ngFor="let quiz of quizData.quizes; let i = index" >
+        {{quiz.quizName}}</option>
+</select>
+
+
+<br>
+<button class="btn-btn-primary" (click)=selectQuiz()> select </button>
+<br>
+</div>
+</form>
+</body>
+
+<footer>
+    <button (click) = this.sessionService.logout()>Logout</button>
+</footer>

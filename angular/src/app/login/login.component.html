@@ -1,0 +1,20 @@
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+    
+
+    
+    <div class="imgcontainer">
+    <img src="https://image.flaticon.com/icons/svg/295/295128.svg" alt="Avatar" class="avatar">
+    </div>
+        <h4>{{errorMessage}}</h4>
+        <div class="container">
+            <label for="username">Username:</label>
+            <input id = "name"type = "text" [(ngModel)]="username" placeholder="Enter the Username" required autocomplete="off" />
+    
+            <label for="password">Password:</label>
+            <input id = "name"type = "password" [(ngModel)]="password" placeholder="Enter the Password" required/>
+    
+        <button (click)=this.signIn()>Login</button>
+        </div>
+    

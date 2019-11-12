@@ -1,0 +1,30 @@
+{
+    "users":[
+        
+    {
+        "email": "jonathan.havener@tcs.com",
+        "name": "Jonathan Havener",
+        "password": "password"
+    },
+    {
+        "email": "temp@tcs.com",
+        "name": "Temp Temperson",
+        "password": "password"
+    },
+    {
+        "email": "abc@tcs.com",
+        "name": "abc",
+        "password": "1234"
+    },
+    {
+        "email": "cde@tcs.com",
+        "name": "cde",
+        "password": "admin"
+    },
+    {
+        "email": "sai@tcs.com",
+        "name": "sai akhil",
+        "password": "123456"
+    }
+    ]
+    }

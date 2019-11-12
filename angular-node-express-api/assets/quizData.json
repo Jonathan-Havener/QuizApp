@@ -1,0 +1,178 @@
+{
+"quizes":
+[
+{
+    "quizName":"Sports Quiz",
+    "questions":
+    [
+    {
+        "question":"Who holds the record for the most NBA championships?",
+        "answerIndex":2,
+        "choices":[
+            "Michael Jordan",
+            "Lebron James",
+            "Bill Russel",
+            "Larry Bird"
+        ]
+    },
+    {
+        "question":"Who has the most career goals?",
+        "answerIndex":1,
+        "choices":[
+            "Lionel Messi",
+            "Pele",
+            "Wayne Rooney",
+            "Christiano Ronaldo"
+        ]
+    },
+    {
+        "question":"Who has the most PGA Tour wins?",
+        "answerIndex":1,
+        "choices":[
+            "Tiger Woods",
+            "Sam Snead",
+            "Arnold Palmer",
+            "Happy Gilmore"
+        ]
+    },
+    {
+        "question":"Whch team has the most world series wins?",
+        "answerIndex":3,
+        "choices":[
+            "Tampa Bay Rays",
+            "Boston Red Sox",
+            "Chicago Cubs",
+            "New York Yankees"
+        ]
+    },
+    {
+        "question":"Which team has the most EPL(English Premeire League) titles?",
+        "answerIndex":2,
+        "choices":[
+            "Chelsea",
+            "Manchster City",
+            "Manchester United",
+            "Arsenal"
+        ]
+    }
+    ]
+    
+},
+{
+    "quizName":"Celebrity Quiz",
+    "questions":
+    [
+    {
+        "question":"Which rockstar was Jennifer Lawrence rumored to have been dating this year?",
+        "answerIndex":3,
+        "choices":[
+            "Adam levine",
+            "Dave Grohl",
+            "Pharrell",
+            "Chris Martin"
+        ]
+    },
+    {
+        "question":"Which island nation is popstar Rihanna from?",
+        "answerIndex":2,
+        "choices":[
+            "Cuba",
+            "Aruba",
+            "Barbados",
+            "Jamaica",
+            "Bahamas"
+        ]
+    },
+    {
+        "question":"Which magical Italian city George Clooney and his new wife Amal decided to get married in?",
+        "answerIndex":1,
+        "choices":[
+            "Rome",
+            "Venice",
+            "Milan",
+            "Lake Como"
+        ]
+    },
+    {
+        "question":"How many Hemsworth brothers are there?",
+        "answerIndex":0,
+        "choices":[
+            "3",
+            "4",
+            "5",
+            "6"
+        ]
+    },
+    {
+        "question":"In what year did Angelina Jolie and Brad Pitt get together?",
+        "answerIndex":0,
+        "choices":[
+            "2004",
+            "2005",
+            "2006",
+            "2007"
+        ]
+    }
+    ]
+    
+},
+{
+    "quizName":"Geography Quiz",
+    "questions":
+    [
+    {
+        "question":"What is Earth's largest continent?",
+        "answerIndex":1,
+        "choices":[
+            "Antarctica",
+            "Asia",
+            "Africa",
+            "Europe"
+        ]
+    },
+    {
+        "question":"What river runs through Baghdad?",
+        "answerIndex":2,
+        "choices":[
+            "Karun",
+            "Jordan",
+            "Tigrix",
+            "Euphrates"
+        ]
+    },
+    {
+        "question":"What country has the most natural lakes?",
+        "answerIndex":0,
+        "choices":[
+            "Canada",
+            "India",
+            "United States",
+            "Australia"
+        ]
+    },
+    {
+        "question":"What is the driest place on Earth?",
+        "answerIndex":0,
+        "choices":[
+            "McMurdo, Antarctica",
+            "Sahara Desert",
+            "Atacama Desert",
+            "Kufra, Libya"
+        ]
+    },
+    {
+        "question":"What is the smallest independent country on Earth?",
+        "answerIndex":3,
+        "choices":[
+            "Nauru",
+            "Grenada",
+            "Monaco",
+            "Vatican City"
+        ]
+    }
+    ]
+    
+}
+]
+
+}
