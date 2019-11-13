@@ -13,7 +13,11 @@ export class DataManagerService {
   }
 
   public getQuizData(){
-    return this.http.get("../assets/quizData.json");
+    var quizData;
+    this.http.get("http://localhost:4200/api/v1/server/dataManager").subscribe(res=>{
+      this.quizData=res.quizName;
+    })
+    return quizData;
   }  
   public getUserData(){
     return this.http.get("../assets/userData.json")

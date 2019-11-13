@@ -16,7 +16,7 @@ export class QuizSelectComponent implements OnInit {
              private dataService: DataManagerService) { }
 quizData:any;
   ngOnInit() {
-    /* legacy code
+    
     this.dataService.getQuizData().subscribe(data => 
       {
       this.quizData = data;
@@ -25,7 +25,7 @@ quizData:any;
     {
       this.router.navigate(['login']);
     }
-    */
+    
   }
 
 quizIndex:number;

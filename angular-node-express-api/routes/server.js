@@ -13,6 +13,20 @@ router.get('/', function(req, res, next) {
   //res.send("In function");
 });
 
+router.get('/sessionManager/:code', function(req,res){
+  if(req.params.code==1){
+    res.json({name : req.session.name});
+  }
+  if(req.params.code==0){
+    req.session.destroy();
+  }
+});
+
+router.get('/dataManager', (req,res)=>{
+  
+  res.json({quizName: queries.findQuizes});
+})
+
 router.get('/login/:name/:password',(req,res,next)=>{
   
   //res.header("Access-Control-Allow_origin", "*");
