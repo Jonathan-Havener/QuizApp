@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { SessionManagerService } from '../services/session-manager.service';
 import { DataManagerService } from '../services/data-manager.service';
-
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-quiz-select',
@@ -13,7 +13,8 @@ export class QuizSelectComponent implements OnInit {
 
   constructor(private router: Router, 
              private sessionService: SessionManagerService,
-             private dataService: DataManagerService) { }
+             private dataService: DataManagerService,
+             private http : HttpClient) { }
 quizData:any;
   ngOnInit() {
     /* legacy code
@@ -30,9 +31,27 @@ quizData:any;
 
 quizIndex:number;
 selectedLevel1;
-errorMessage;
+quizName:string;
 
-selectQuiz(){
+
+ selectQuiz(){
+    console.log("We're attempting to connect to server");
+    this.http.get("http://localhost:4200/api/v1/server/quizSelect/"+this.quizName)
+      .subscribe(res=>{
+       
+        if(res.code==1)
+        {
+          console.log("Proceed to route");
+          this.router.navigate(['quiz']);
+        }
+        });
+  }
+
+
+
+
+
+//selectQuiz(){
 /*legacy code
 if(typeof this.selectedLevel1 == "undefined")
 {
@@ -56,5 +75,5 @@ if(typeof this.selectedLevel1 == "undefined")
       this.router.navigate(['quiz']);
     }, 100);
   */ 
-  }
+  //}
 }
