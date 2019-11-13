@@ -12,6 +12,27 @@ router.get('/', function(req, res, next) {
   res.send({users: [{name: 'Timmy'}]});
   //res.send("In function");
 });
+// quiz-select by HDP
+
+router.get('/quiz-select/:quiz', function(req, res, next) {
+  //
+  //
+  if(quizName){
+    res.writeHead(200,{'Content-Type':'JSON'});
+    res.write(JSON.stringify({code:1}))
+    res.end();
+  }
+});
+
+router.post('/results', function(req, res, next) {
+  //
+  //
+  if(req.submit){
+    res.writeHead(200,{'Content-Type':'JSON'});
+    res.write(JSON.stringify({code:1}))
+    res.end();
+  }
+});
 
 router.get('/sessionManager/:code', function(req,res){
   if(req.params.code==1){
@@ -81,6 +102,7 @@ router.get('/quiz-select/:quizName',(req,res)=> {
       // put the emptyTestBook into the session so the quiz can get it
       //req.session.testBook = emptyTestBook;
       // TODO: Route to the quiz page
+
   }
 });
 

@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { SessionManagerService } from '../services/session-manager.service';
 import { DataManagerService } from '../services/data-manager.service';
-
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-quiz',
@@ -13,7 +13,8 @@ export class QuizComponent implements OnInit {
 
   constructor(private router: Router, 
               private sessionService: SessionManagerService,
-              private dataService: DataManagerService) { }
+              private dataService: DataManagerService,
+              private http : HttpClient) { }
 
   // quizData is initialized by ngOnInit to be an object of the quizData.json
   quizData:any;
@@ -53,6 +54,15 @@ export class QuizComponent implements OnInit {
   submitQuiz()
   {
 
+    console.log("We're attempting to connect to server");
+    this.http.post("http://localhost:4200/api/v1/server/quizSelect/results",{submit:1})
+      .subscribe(res=>{
+        if(res.code==1)
+        {
+          console.log("Proceed to route");
+          this.router.navigate(['results']);
+        }
+        });
     /* legacy code
     this.sessionService.correctAnswers=this.checkAnswers();
     this.router.navigate(['results']);
@@ -60,4 +70,3 @@ export class QuizComponent implements OnInit {
   }
 
 }
-
