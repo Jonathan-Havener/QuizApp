@@ -5,7 +5,7 @@
 
 <h6>{{this.errorMessage}}</h6>
 
-<select [(ngModel)]="this.selectedLevel1" name="kay" >
+<select [(ngModel)]="this.quizName" name="kay" >
     <option *ngFor="let quiz of quizData.quizes; let i = index" >
         {{quiz.quizName}}</option>
 </select>

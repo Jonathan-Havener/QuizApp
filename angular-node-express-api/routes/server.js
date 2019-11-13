@@ -14,15 +14,7 @@ router.get('/', function(req, res, next) {
 });
 // quiz-select by HDP
 
-router.get('/quiz-select/:quiz', function(req, res, next) {
-  //
-  //
-  if(quizName){
-    res.writeHead(200,{'Content-Type':'JSON'});
-    res.write(JSON.stringify({code:1}))
-    res.end();
-  }
-});
+
 
 router.post('/results', function(req, res, next) {
   //
@@ -86,12 +78,20 @@ router.get('/login/:name/:password',(req,res,next)=>{
   }  
 });
 
+/*router.get('/quiz-select/:quiz', function(req, res, next) {
+  //
+  //
+  if(quizName){
+    res.writeHead(200,{'Content-Type':'JSON'});
+    res.write(JSON.stringify({code:1}))
+    res.end();
+  }
+});*/
 
 // When a user selects a quiz, we should parse the quizName from the url
 // Next we should find the appropriate quiz data and write it into the response
 router.get('/quiz-select/:quizName',(req,res)=> {
-  var emptyTestBook = queries.findQuiz(req.params.quizName);
-
+  var emptyTestBook = queries.findQuiz(req.params.quizName.toString());
   if(emptyTestBook = null)
   {
       // We didn't find a quiz with that name! 
@@ -102,6 +102,9 @@ router.get('/quiz-select/:quizName',(req,res)=> {
       // put the emptyTestBook into the session so the quiz can get it
       //req.session.testBook = emptyTestBook;
       // TODO: Route to the quiz page
+      res.writeHead(200,{'Content-Type':'JSON'});
+      res.write(JSON.stringify({code:1}))
+      res.end();
 
   }
 });

@@ -31,13 +31,15 @@ quizData:any;
   }
 
 quizIndex:number;
-selectedLevel1;
 quizName:string;
 
 
  selectQuiz(){
     console.log("We're attempting to connect to server");
-    this.http.get("http://localhost:4200/api/v1/server/quizSelect/"+this.quizName)
+    var tempString =""
+    //this.quizName = "quiz";
+    //for(var i =0; i <this.quizName; )
+    this.http.get("http://localhost:4200/api/v1/server/quiz-select/"+this.quizName)
       .subscribe(res=>{
        
         if(res.code==1)
