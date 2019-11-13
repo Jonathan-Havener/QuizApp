@@ -32,9 +32,6 @@ export class LoginComponent implements OnInit {
   username: string;
   password: string;
 
-  
-
-
   errorMessage=""
   signIn(){
     console.log("We're attempting to connect to server");
@@ -48,11 +45,13 @@ export class LoginComponent implements OnInit {
         else if(res.code==1)
         {
           console.log("Proceed to route");
+          this.sessionService.validateSession();
           this.router.navigate(['quizSelect']);
         }
-        });
+        });    
   }
 
+  
 }
 
 

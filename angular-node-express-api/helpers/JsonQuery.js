@@ -41,6 +41,10 @@ module.exports = {
         }
         // we did not find an email
         return null;
+    },
+
+    findQuizes: function(){
+        return require('../assets/quizData.json');
     }
 
 }

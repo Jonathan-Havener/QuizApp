@@ -17,7 +17,7 @@ export class QuizSelectComponent implements OnInit {
              private http : HttpClient) { }
 quizData:any;
   ngOnInit() {
-    /* legacy code
+    
     this.dataService.getQuizData().subscribe(data => 
       {
       this.quizData = data;
@@ -26,7 +26,7 @@ quizData:any;
     {
       this.router.navigate(['login']);
     }
-    */
+    
   }
 
 quizIndex:number;
