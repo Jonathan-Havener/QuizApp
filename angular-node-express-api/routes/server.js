@@ -23,8 +23,8 @@ router.get('/sessionManager/:code', function(req,res){
 });
 
 router.get('/dataManager', (req,res)=>{
-  
-  res.json({quizName: queries.findQuizes});
+  console.log(queries.findQuizes())
+  res.json({quizName: queries.findQuizes()});
 })
 
 router.get('/login/:name/:password',(req,res,next)=>{

@@ -16,15 +16,16 @@ export class QuizSelectComponent implements OnInit {
              private dataService: DataManagerService) { }
 quizData:any;
   ngOnInit() {
-    
+    //this.quizData = this.dataService.getQuizData();
     this.dataService.getQuizData().subscribe(data => 
       {
-      this.quizData = data;
+      this.quizData = data.quizName;
+      console.log(this.quizData);
       });
-    if(!this.sessionService.isValidSession)
+    /*if(!this.sessionService.isValidSession)
     {
       this.router.navigate(['login']);
-    }
+    }*/
     
   }
 
