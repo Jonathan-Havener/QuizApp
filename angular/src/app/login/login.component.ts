@@ -26,7 +26,6 @@ export class LoginComponent implements OnInit {
         this.userData = data;
       });
     */
-    console.log(this.userData);
   }
 
   firstUser:any;
@@ -39,10 +38,19 @@ export class LoginComponent implements OnInit {
   errorMessage=""
   signIn(){
     console.log("We're attempting to connect to server");
-    var x = this.http.get("http://localhost:4200/api/v1/server/login/"+this.username+"/"+this.password)
-      .subscribe(res=>{console.log("we've called it")});
-    
-  
+    this.http.get("http://localhost:4200/api/v1/server/login/"+this.username+"/"+this.password)
+      .subscribe(res=>{
+        if(res.code==0)
+        {
+          this.errorMessage=res.message;
+          //console.log("Don't route")
+        }
+        else if(res.code==1)
+        {
+          console.log("Proceed to route");
+          this.router.navigate(['quizSelect']);
+        }
+        });
   }
 
 }
