@@ -22,14 +22,14 @@ export class SessionManagerService {
   invalidateSession()
   {
     console.log("invalidating session");
-    this.http.get("http://localhost:4200/api/v1/server/sessionManager/"+0);
+    this.http.get<any>("http://localhost:4200/api/v1/server/sessionManager/"+0);
     console.log("within invaidation");
     this.activeUserName = "";
     this.isValidSession = false;
   }
   validateSession()
   {
-    this.http.get("http://localhost:4200/api/v1/server/sessionManager/"+1).subscribe(res=>{
+    this.http.get<any>("http://localhost:4200/api/v1/server/sessionManager/"+1).subscribe(res=>{
       this.activeUserName=res.name.toString();
       this.isValidSession=true;
     });

@@ -39,7 +39,7 @@ quizName:string;
     var tempString =""
     //this.quizName = "quiz";
     //for(var i =0; i <this.quizName; )
-    this.http.get("http://localhost:4200/api/v1/server/quiz-select/"+this.quizName)
+    this.http.get<any>("http://localhost:4200/api/v1/server/quiz-select/"+this.quizName)
       .subscribe(res=>{
        
         if(res.code==1)

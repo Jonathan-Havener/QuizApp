@@ -55,7 +55,7 @@ export class QuizComponent implements OnInit {
   {
 
     console.log("We're attempting to connect to server");
-    this.http.post("http://localhost:4200/api/v1/server/quizSelect/results",{submit:1})
+    this.http.post<any>("http://localhost:4200/api/v1/server/quizSelect/results",{submit:1})
       .subscribe(res=>{
         if(res.code==1)
         {

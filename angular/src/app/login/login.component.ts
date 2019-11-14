@@ -35,7 +35,7 @@ export class LoginComponent implements OnInit {
   errorMessage=""
   signIn(){
     console.log("We're attempting to connect to server");
-    this.http.get("http://localhost:4200/api/v1/server/login/"+this.username+"/"+this.password)
+    this.http.get<any>("http://localhost:4200/api/v1/server/login/"+this.username+"/"+this.password)
       .subscribe(res=>{
         if(res.code==0)
         {

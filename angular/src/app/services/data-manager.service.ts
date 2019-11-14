@@ -13,7 +13,7 @@ export class DataManagerService {
   }
 
   public getQuizData(){
-    return this.http.get("http://localhost:4200/api/v1/server/dataManager");
+    return this.http.get<any>("http://localhost:4200/api/v1/server/dataManager");
   }
 
   public getUserData(){
