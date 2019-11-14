@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http'; 
+import { ArrayType } from '@angular/compiler/src/output/output_ast';
 
 
 @Injectable({
@@ -16,11 +17,13 @@ export class DataManagerService {
     return this.http.get<any>("http://localhost:4200/api/v1/server/dataManager");
   }
 
+
   public getUserData(){
     return this.http.get("../assets/userData.json")
   }
 
   quizData:any;
+  emptyTestBook;
   //any function that should be used in multiple places go here
 
 }

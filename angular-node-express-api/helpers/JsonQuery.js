@@ -36,7 +36,7 @@ module.exports = {
             {
                 // we've found a quiz with that name. Return
                 // the quiz's information
-                return quizData.quizes[i].questions;
+                return quizData.quizes[i];
             }
         }
         // we did not find an email

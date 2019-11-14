@@ -20,8 +20,10 @@ quizData:any;
     //this.quizData = this.dataService.getQuizData();
     this.dataService.getQuizData().subscribe(data => 
       {
-      this.quizData = data.quizName;
-      console.log(this.quizData);
+        this.quizData = data.quizes;
+        console.log(this.quizData);
+
+        
       });
     /*if(!this.sessionService.isValidSession)
     {
@@ -33,22 +35,21 @@ quizData:any;
 quizIndex:number;
 quizName:string;
 
-
- selectQuiz(){
-    console.log("We're attempting to connect to server");
-    var tempString =""
-    //this.quizName = "quiz";
-    //for(var i =0; i <this.quizName; )
-    this.http.get<any>("http://localhost:4200/api/v1/server/quiz-select/"+this.quizName)
-      .subscribe(res=>{
-       
-        if(res.code==1)
-        {
-          console.log("Proceed to route");
-          this.router.navigate(['quiz']);
-        }
-        });
-  }
+selectQuiz(){
+  console.log("We're attempting to connect to server");
+  var tempString =""
+  //this.quizName = "quiz";
+  //for(var i =0; i <this.quizName; )
+  this.http.get<any>("http://localhost:4200/api/v1/server/quiz-select/"+this.quizName)
+    .subscribe(res=>{
+      
+      if(res.code==1)
+      {
+        this.dataService.emptyTestBook = res.emptyTest;
+        this.router.navigate(['quiz']);
+      }
+      });
+}
 
 
 

@@ -37,7 +37,7 @@ router.get('/sessionManager/:code', function(req,res){
 
 router.get('/dataManager', (req,res)=>{
   console.log(queries.findQuizes())
-  res.json({quizName: queries.findQuizes()});
+  res.json({quizes: queries.findQuizes()});
 })
 
 router.get('/login/:name/:password',(req,res,next)=>{
@@ -78,21 +78,11 @@ router.get('/login/:name/:password',(req,res,next)=>{
   }  
 });
 
-/*router.get('/quiz-select/:quiz', function(req, res, next) {
-  //
-  //
-  if(quizName){
-    res.writeHead(200,{'Content-Type':'JSON'});
-    res.write(JSON.stringify({code:1}))
-    res.end();
-  }
-});*/
-
 // When a user selects a quiz, we should parse the quizName from the url
 // Next we should find the appropriate quiz data and write it into the response
 router.get('/quiz-select/:quizName',(req,res)=> {
   var emptyTestBook = queries.findQuiz(req.params.quizName.toString());
-  if(emptyTestBook = null)
+  if(emptyTestBook == null)
   {
       // We didn't find a quiz with that name! 
       // Create an error message and route back to quiz
@@ -100,19 +90,22 @@ router.get('/quiz-select/:quizName',(req,res)=> {
   }
   else{
       // put the emptyTestBook into the session so the quiz can get it
-      //req.session.testBook = emptyTestBook;
+      // req.session.testBook = emptyTestBook;
       // TODO: Route to the quiz page
       res.writeHead(200,{'Content-Type':'JSON'});
-      res.write(JSON.stringify({code:1}))
+      res.write(JSON.stringify({code:1, emptyTest : emptyTestBook}))
+      console.log("Test book is" +JSON.stringify(emptyTestBook));
+      //res.write(JSON.stringify({emptyTest : JSON.stringify(emptyTestBook)}));
       res.end();
 
   }
 });
 
+
 // We're still not sure how to process the iterum page with posts
 router.post('./quiz/:testBook', (req,res)=>{
   var score = validations.quizValidate(req.body.testBook);
-
+  
   //req.session.testScore=score;
   //route to the results page
 });
