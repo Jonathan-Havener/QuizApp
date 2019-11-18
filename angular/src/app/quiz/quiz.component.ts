@@ -3,7 +3,7 @@ import { Router } from '@angular/router';
 import { SessionManagerService } from '../services/session-manager.service';
 import { DataManagerService } from '../services/data-manager.service';
 import { HttpClient } from '@angular/common/http';
-
+import {HttpHeaders} from '@angular/common/http';
 @Component({
   selector: 'app-quiz',
   templateUrl: './quiz.component.html',
@@ -21,29 +21,42 @@ export class QuizComponent implements OnInit {
   ngOnInit() {
     
     this.testBookData = this.dataService.emptyTestBook;
-  }
+      //this.quizData = this.dataService.getQuizData();
+      
+    }
   
- 
-
+  
+  postData(){
+    return this.http.post('/quiz/testBook', this.testBookData)
+    }
+    
+  
   submitQuiz()
   {
-
-    console.log("We're attempting to connect to server");
-    this.http.post<any>("http://localhost:4200/api/v1/server/quizSelect/results",{submit:1})
+    
+    //console.log("We're attempting to connect to server");
+    console.log(JSON.stringify(this.testBookData));
+    let body=JSON.stringify(this.testBookData)
+    let headers=new HttpHeaders({'Content-Type':'application/json'});
+    let options={headers:headers};
+    this.http.post<any>('http://localhost:4200/api/v1/server/quiz/testBook/',body,options)
       .subscribe(res=>{
-        if(res.code==1)
-        {
+        console.log(res.score+"score");
+          this.dataService.score=res.score
+          console.log("this is the score in quiz component"+this.dataService.score)
           console.log("Proceed to route");
           this.router.navigate(['results']);
+        
         }
-        });
+        );
+        
     /* legacy code
     this.sessionService.correctAnswers=this.checkAnswers();
     this.router.navigate(['results']);
     */
   }
 
-}
+
 
 /*legacy code ngONinit
     this.dataService.getQuizData().subscribe(data => 
@@ -74,4 +87,4 @@ export class QuizComponent implements OnInit {
     }
     return count;
   }
-*/
+*/}

@@ -1,9 +1,12 @@
 const express = require('express');
 const path = require('path');
 const router = express.Router();
+const bodyParser = require('body-parser');
 var validations = require('../helpers/Validation.js');
 var queries = require('../helpers/JsonQuery.js');
 
+// router.use(bodyParser.urlencoded({ extended: false }));
+// router.use(bodyParser.json());
 
 /* GET users listing. */
 router.get('/', function(req, res, next) {
@@ -99,17 +102,22 @@ router.get('/quiz-select/:quizName',(req,res)=> {
       res.end();
 
   }
-});
+} );
 
 
 // We're still not sure how to process the iterum page with posts
-router.post('./quiz/:testBook', (req,res)=>{
-  var score = validations.quizValidate(req.body.testBook);
-  
+router.post('/quiz/testBook', (req,res)=>{
+  console.log(req.body)
+  var score = validations.quizValidate(req.body);
+  console.log(score);
+  res.writeHead(200,{'Content-Type':'JSON'});
+      res.write(JSON.stringify({score:score}));
+     // console.log("Test book is" +JSON.stringify(emptyTestBook));
+      //res.write(JSON.stringify({emptyTest : JSON.stringify(emptyTestBook)}));
+      res.end();
   //req.session.testScore=score;
   //route to the results page
 });
-
 
 //app.use(session(sess));
 module.exports = router;

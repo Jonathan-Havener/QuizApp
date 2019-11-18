@@ -6,6 +6,7 @@
 <h6>{{this.errorMessage}}</h6>
 
 <select [(ngModel)]="this.quizName" name="kay" >
+    <option> -- Select an Option--</option>
     <option *ngFor="let quiz of quizData.quizes; let i = index" >
         {{quiz.quizName}}</option>
 </select>

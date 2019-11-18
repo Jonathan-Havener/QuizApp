@@ -13,6 +13,7 @@ module.exports = {
     // given a completed test, testBook, count all of the correct answers
     quizValidate : function(testBook)
     {
+        console.log("testbook in helper validation"+testBook);
         let count =0;
         for(var i=0; i < testBook.questions.length; i++)
         {

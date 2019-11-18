@@ -22,8 +22,13 @@ export class DataManagerService {
     return this.http.get("../assets/userData.json")
   }
 
+  
+ 
+
+
   quizData:any;
   emptyTestBook;
+  score:any;
   //any function that should be used in multiple places go here
 
 }

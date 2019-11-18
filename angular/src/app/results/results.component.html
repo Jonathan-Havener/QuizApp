@@ -2,19 +2,22 @@
 <div class = "container-fluid">
     
     <div class ="row" style ="background-color:black">
-        <div class="col-sm-4"></div>
-        <div class="col-sm-4" style="background-color:lavenderblush">
-            You answered {{this.sessionService.correctAnswers}} correct
+        <div class="col-sm-12" style="background-color:rgb(146, 196, 243)">You have successfully submitted your Quiz!</div>
+        <div class="col-sm-12" style="background-color:lavenderblush">
+            You answered {{this.dataService.score}} correct<br>
+            You answered {{5-this.dataService.score}} incorrect
         </div>
-        <div class="col-sm-4" style ="background-color:black">
-            <button (click) = this.selectNewQuiz()>Try Again!</button>
-        </div>
+      
     </div>
-    
+<br>
+
+<div class="col-sm-12" style ="background-color:white">
+        <button (click) = this.selectNewQuiz()>Try Again!</button>
 </div>
 
-
-<footer>
+<br>
+<br>
+<footer class="col-sm-12">
     <button (click) = this.sessionService.logout()>Logout</button>
 </footer>
-
+</div>
