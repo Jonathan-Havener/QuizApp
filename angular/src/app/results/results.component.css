@@ -1,0 +1,22 @@
+.buttonstyle {
+    background-color: #0bfa1f ;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 20%;
+    }
+
+.buttonstyle2 {
+        background-color: red ;
+        color: white;
+        padding: 14px 20px;
+        margin: 8px 0;
+        border: none;
+        cursor: pointer;
+        width: 20%;
+        }
+
+
+    

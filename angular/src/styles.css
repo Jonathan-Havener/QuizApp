@@ -1,1 +1,81 @@
 /* You can add global styles to this file, and also import other style files */
+/* You can add global styles to this file, and also import other style files */
+.questionsBox {
+    display: block;
+    border: solid 1px #e3e3e3;
+    padding: 10px 40px 0px;
+    box-shadow: inset 0 0 30px rgba(000,000,000,0.1), inset 0 0 4px rgba(255,255,255,1);
+    border-radius: 3px;
+    margin: 0 10px;
+}
+.questions {
+    background: #007fbe;
+    color: #FFF;
+    font-size: 22px;
+    padding: 8px 30px;
+    font-weight: 300;
+    margin: 0 -30px 10px;
+    position: relative;
+}
+.graybutton {
+    background-color: rgb(177, 250, 177);
+    color: #888888;
+    display: inline-block;
+    border: solid 3px #cccccc;
+    vertical-align: middle;
+    text-shadow: 0 1px 0 #ffffff;
+    line-height: 27px;
+    min-width: 160px;
+    text-align: center;
+    padding: 5px 20px;
+    text-decoration: none;
+    border-radius: 0px;
+    text-transform: capitalize;
+    border-radius: 20%;
+}
+
+.graybutton2{
+    background-color: rgb(238, 153, 153);
+    color: #888888;
+    display: inline-block;
+    border: solid 3px #cccccc;
+    vertical-align: middle;
+    text-shadow: 0 1px 0 #ffffff;
+    line-height: 27px;
+    min-width: 160px;
+    text-align: center;
+    padding: 5px 20px;
+    text-decoration: none;
+    border-radius: 0px;
+    text-transform: capitalize;
+    border-radius: 20%;
+}
+.questionsRow {
+    display: inline-block;
+    line-height: 30px;
+    padding: 0 10px;
+}
+
+strong {
+    color:#000000;
+}
+
+option {
+    text-align: center;
+}
+
+body, html {
+    height: 100%;
+  }
+  .bg {
+    /* The image used */
+    background-image: url("https://mdbootstrap.com/img/Photos/Horizontal/Nature/full page/img(20).jpg");
+  
+    /* Full height */
+    height: 100%;
+  
+    /* Center and scale the image nicely */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }

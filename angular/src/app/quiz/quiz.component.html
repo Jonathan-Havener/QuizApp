@@ -1,18 +1,25 @@
-<h4 *ngFor="let quizElement of this.testBookData.questions; let i = index">
-    {{quizElement.question}}
-    <h5 *ngFor="let option of quizElement.choices; let j = index;">
-        <div class="form-check">
-            <input class="form-check-input" type="radio" name="{{quizElement.question}}" 
-                id="{{j}}" value = "{{j}}"  [(ngModel)]="quizElement.answerSelected">
-            <label class="form-check-label" for="option">
-                {{option}}
-            </label>
-        </div>
-    </h5>
-</h4>
-
-<button (click) = submitQuiz()>Submit!</button>
-
-<footer>
-    <button (click) = this.sessionService.logout()>Logout</button>
-</footer>
+<div class="questionsBox">
+    <h4 *ngFor="let quizElement of this.testBookData.questions; let i = index">
+        <span class = questions>Q{{i+1}}. {{quizElement.question}}</span>
+        <h5 *ngFor="let option of quizElement.choices; let j = index;">
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="{{quizElement.question}}" 
+                    id="{{j}}" value = "{{j}}"  [(ngModel)]="quizElement.answerSelected">
+                <label class="form-check-label element-animation" for="option">
+                    {{option}}
+                </label>
+            </div>
+        </h5><br><br>
+    </h4>
+    
+    <div class=questionsRow>
+        <button class = graybutton (click) = submitQuiz()><strong>Submit!</strong></button><br>
+    </div>
+    
+    <div class=questionsRow>
+    <footer>
+        <button class = graybutton2 (click) = this.sessionService.logout()><strong>Logout</strong></button>
+    </footer>
+    </div>
+    
+    </div>

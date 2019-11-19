@@ -1,0 +1,35 @@
+.centered {
+    text-align: center;
+}
+
+.buttonstyle {
+    background-color: #007fbe ;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 20%;
+    }
+
+.buttonstyle2 {
+        background-color: red ;
+        color: white;
+        padding: 14px 20px;
+        margin: 8px 0;
+        border: none;
+        cursor: pointer;
+        width: 20%;
+        }
+
+    .select {
+        width: 20%;
+        top: 0;
+        padding: 5px 0;
+        height: 50px;
+        background: #007fbe;
+        border: 0 none;
+        color: white;
+        
+        
+    }

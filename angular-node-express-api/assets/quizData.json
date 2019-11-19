@@ -36,7 +36,7 @@
         ]
     },
     {
-        "question":"Whch team has the most world series wins?",
+        "question":"Which team has the most world series wins?",
         "answerIndex":3,
         "choices":[
             "Tampa Bay Rays",
@@ -46,7 +46,7 @@
         ]
     },
     {
-        "question":"Which team has the most EPL(English Premeire League) titles?",
+        "question":"Which team has the most EPL(English Premier League) titles?",
         "answerIndex":2,
         "choices":[
             "Chelsea",

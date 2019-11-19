@@ -1,23 +1,31 @@
 
 <div class = "container-fluid">
     
-    <div class ="row" style ="background-color:black">
-        <div class="col-sm-12" style="background-color:rgb(146, 196, 243)">You have successfully submitted your Quiz!</div>
-        <div class="col-sm-12" style="background-color:lavenderblush">
-            You answered {{this.dataService.score}} correct<br>
-            You answered {{5-this.dataService.score}} incorrect
+    <div class ="text-center card" style ="widows: 18rem;">
+        <br>
+        <div class="col-sm-12 card-title" style="background-color:rgb(146, 196, 243);font-size: 24px;"><br>You have successfully submitted your Quiz!<br> <br></div>
+        <div class="col-sm-12 card-text" style="background-color:#ffd7e4; font-size: 24px;">
+            <br>
+            You answered {{this.dataService.score}} correct<br><br>
+            You answered {{5-this.dataService.score}} incorrect<br><br>
         </div>
-      
+        
+        
+        <div class="col-sm-12">
+            <br><br>
+                <button class="btn-btn-primary buttonstyle" (click) = this.selectNewQuiz()>Try Again!</button>
+                <br><br>
+        </div> 
+        
+<footer >
+    <button class = "buttonstyle2" (click) = this.sessionService.logout()>Logout</button>
+</footer>
     </div>
 <br>
 
-<div class="col-sm-12" style ="background-color:white">
-        <button (click) = this.selectNewQuiz()>Try Again!</button>
+
+
+
+
 </div>
 
-<br>
-<br>
-<footer class="col-sm-12">
-    <button (click) = this.sessionService.logout()>Logout</button>
-</footer>
-</div>

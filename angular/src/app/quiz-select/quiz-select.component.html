@@ -1,24 +1,22 @@
-<body >
-<form>
-<div class="container">
-<h3>Select Area</h3>
-
-<h6>{{this.errorMessage}}</h6>
-
-<select [(ngModel)]="this.quizName" name="kay" >
-    <option> -- Select an Option--</option>
-    <option *ngFor="let quiz of quizData.quizes; let i = index" >
-        {{quiz.quizName}}</option>
-</select>
-
-
-<br>
-<button class="btn-btn-primary" (click)=selectQuiz()> select </button>
-<br>
-</div>
-</form>
-</body>
-
-<footer>
-    <button (click) = this.sessionService.logout()>Logout</button>
-</footer>
+<body class="centered">
+    <form>    
+    <div class="container">
+    <h3>Select Quiz Category</h3>
+    
+    <h6>{{this.errorMessage}}</h6>
+    <br><br>
+    <select class ="select" [(ngModel)]="this.quizName" name="kay" >
+        <option> -- Select an Option--</option>
+        <option *ngFor="let quiz of quizData.quizes; let i = index" >
+            {{quiz.quizName}}</option>
+    </select>
+    <br><br>
+    <button class="btn-btn-primary buttonstyle" (click)=selectQuiz()>Select</button>
+    </div>
+    </form>
+    </body>
+    <br>
+    <footer class="centered"> 
+        <button class = "buttonstyle2" (click) = this.sessionService.logout()>Logout</button>
+    </footer>
+    
